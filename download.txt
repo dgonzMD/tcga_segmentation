@@ -1,0 +1,3 @@
+cd C:\Users\Danny\Documents\Python Scripts\tcga_segmentation
+python -m code.data_processing.main --gdc "C:\Users\Danny\Documents\Python Scripts\tcga_segmentation\gdc-client.exe" "D:\AI Projects\ERG Prostate\PRAD_100_FS"
+python -m code.training --preprocessed-data-folder "D:\AI Projects\ERG Prostate\PRAD_100_FS\preprocessed" --alpha 0.1 --beta 0. --max-bag-size 100

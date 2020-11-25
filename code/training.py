@@ -212,7 +212,7 @@ def perform_epoch(model, optimizer, epoch, dataloader, hyper_parameters, is_trai
 
     # Save model
     if hyper_parameters['save_model'] and is_training and epoch % hyper_parameters['save_model_timesteps'] == 0:
-        date_prefix = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+        date_prefix = datetime.datetime.now().strftime("%Y_%m_%d_[%H_%M_%S]")
         save_path = os.path.join(hyper_parameters['models_save_folder'],
                                  '{}_epoch{}_loss{:.3f}.pt'.format(date_prefix, epoch, mean_epoch_loss))
         torch.save(model.state_dict(), save_path)
@@ -287,7 +287,7 @@ def main(hyper_parameters):
 
     # Instantiate summary writer if tensorboard activated
     if hyper_parameters['with_tensorboard']:
-        summary_writer_filename = 'summary_' + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+        summary_writer_filename = 'summary_' + datetime.datetime.now().strftime("%Y_%m_%d_[%H_%M_%S]")
         summary_writer_folder_path = os.path.join('tensorboard', summary_writer_filename)
         summary_writer = SummaryWriter(log_dir=summary_writer_folder_path)
     else:

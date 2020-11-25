@@ -1,9 +1,8 @@
 __author__ = 'marvinler'
 
-import os
-
 from code import get_logger
 from code.data_processing import case_factory, svs_factory
+import os
 
 desired_magnification = 20
 desired_tile_width = 224

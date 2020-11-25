@@ -27,11 +27,11 @@ import openslide
 from openslide import open_slide, ImageSlide
 from openslide.deepzoom import DeepZoomGenerator
 from optparse import OptionParser
-import os
 import re
 import shutil
 import sys
 from unicodedata import normalize
+import os
 
 VIEWER_SLIDE_NAME = 'slide'
 
